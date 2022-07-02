@@ -10,29 +10,12 @@ class list_item extends CI_Model
 	}	
 
 	public function get_record()
-	{
-			
+	{		
 		$data=$this->db->get('product');
-	
-		return $data->num_rows();
+		return $data->result_array();
 	}
 
-	public function get_authors($limit, $start) {
-        $this->db->limit($limit);
-		$this->db->offset($start);
-        $query = $this->db->get('product');
-        return $query->result_array();
-    }
 
-	public function search_info($name)
-	{
-		$this->db->select("*");
-		$this->db->from('product');
-		$this->db->like('image',$name);
-		$this->db->or_like('name',$name);
-		$ans=$this->db->get();
-		return $ans->result_array();
-	}
 	public function delete($id)
 	{
 
@@ -54,6 +37,16 @@ class list_item extends CI_Model
 		$id=$this->db->where('id',$id);
 		$this->db->update('product',$array);
 	}
+	
+	public function insert_data($array)
+	{
+		$this->db->insert('product',$array);
+		
+
+	}
+
+
+
 }
 
 
