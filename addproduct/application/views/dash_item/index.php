@@ -13,16 +13,19 @@
 		<link rel='stylesheet' type='text/css' href='<?php echo base_url(); ?>css/plugins/lightbox/lightbox.css'>
 		
 		<!-- Styles -->
+	
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-		
-		
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/sangoma-purple.css">
 		<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css"> -->
 		<!-- JS Libs -->
 	
 		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 		<script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>js/libs/jquery.js"><\/script>')</script>
 		<script src="<?php echo base_url(); ?>js/libs/modernizr.js"></script>
 
@@ -69,399 +72,32 @@ body {
   height: 0;
 }
 
-.form_wrapper {
-  background: #fff;
-  width: 400px;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 25px;
-  margin: 8% auto 0;
-  position: relative;
-  z-index: 1;
-  border-top: 5px solid #f5ba1a;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  -webkit-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
-  -webkit-transition: none;
-  transition: none;
-  -webkit-animation: expand 0.8s 0.6s ease-out forwards;
-  animation: expand 0.8s 0.6s ease-out forwards;
-  opacity: 0;
-}
-.form_wrapper h2 {
-  font-size: 1.5em;
-  line-height: 1.5em;
-  margin: 0;
-}
-.form_wrapper .title_container {
-  text-align: center;
-  padding-bottom: 15px;
-}
-.form_wrapper h3 {
-  font-size: 1.1em;
-  font-weight: normal;
-  line-height: 1.5em;
-  margin: 0;
-}
-.form_wrapper label {
-  font-size: 12px;
-}
-.form_wrapper .row {
-  margin: 10px -15px;
-}
-.form_wrapper .row > div {
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-.form_wrapper .col_half {
-  width: 50%;
-  float: left;
-}
-.form_wrapper .input_field {
-  position: relative;
-  margin-bottom: 20px;
-  -webkit-animation: bounce 0.6s ease-out;
-  animation: bounce 0.6s ease-out;
-}
-.form_wrapper .input_field > span {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #333;
-  height: 100%;
-  border-right: 1px solid #cccccc;
-  text-align: center;
-  width: 30px;
-}
-.form_wrapper .input_field > span > i {
-  padding-top: 10px;
-}
-.form_wrapper .textarea_field > span > i {
-  padding-top: 10px;
-}
-.form_wrapper input[type=text], .form_wrapper input[type=email], .form_wrapper input[type=password] {
-  width: 100%;
-  padding: 8px 10px 9px 35px;
-  height: 35px;
-  border: 1px solid #cccccc;
-  box-sizing: border-box;
-  outline: none;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.form_wrapper input[type=text]:hover, .form_wrapper input[type=email]:hover, .form_wrapper input[type=password]:hover {
-  background: #fafafa;
-}
-.form_wrapper input[type=text]:focus, .form_wrapper input[type=email]:focus, .form_wrapper input[type=password]:focus {
-  -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
-  -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
-  box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
-  border: 1px solid #f5ba1a;
-  background: #fafafa;
-}
-.form_wrapper input[type=submit] {
-  background: #f5ba1a;
-  height: 35px;
-  line-height: 35px;
-  width: 100%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.form_wrapper input[type=submit]:hover {
-  background: #e1a70a;
-}
-.form_wrapper input[type=submit]:focus {
-  background: #e1a70a;
-}
-.form_wrapper input[type=checkbox], .form_wrapper input[type=radio] {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+h1 {
+    margin-bottom: 40px;
 }
 
-.form_container .row .col_half.last {
-  border-left: 1px solid #cccccc;
+label {
+    color: #333;
 }
 
-.checkbox_option label {
-  margin-right: 1em;
-  position: relative;
-}
-.checkbox_option label:before {
-  content: "";
-  display: inline-block;
-  width: 0.5em;
-  height: 0.5em;
-  margin-right: 0.5em;
-  vertical-align: -2px;
-  border: 2px solid #cccccc;
-  padding: 0.12em;
-  background-color: transparent;
-  background-clip: content-box;
-  transition: all 0.2s ease;
-}
-.checkbox_option label:after {
-  border-right: 2px solid #000000;
-  border-top: 2px solid #000000;
-  content: "";
-  height: 20px;
-  left: 2px;
-  position: absolute;
-  top: 7px;
-  transform: scaleX(-1) rotate(135deg);
-  transform-origin: left top;
-  width: 7px;
-  display: none;
-}
-.checkbox_option input:hover + label:before {
-  border-color: #000000;
-}
-.checkbox_option input:checked + label:before {
-  border-color: #000000;
-}
-.checkbox_option input:checked + label:after {
-  -moz-animation: check 0.8s ease 0s running;
-  -webkit-animation: check 0.8s ease 0s running;
-  animation: check 0.8s ease 0s running;
-  display: block;
-  width: 7px;
-  height: 20px;
-  border-color: #000000;
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px;
+    }
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+
 }
 
-.radio_option label {
-  margin-right: 1em;
-}
-.radio_option label:before {
-  content: "";
-  display: inline-block;
-  width: 0.5em;
-  height: 0.5em;
-  margin-right: 0.5em;
-  border-radius: 100%;
-  vertical-align: -3px;
-  border: 2px solid #cccccc;
-  padding: 0.15em;
-  background-color: transparent;
-  background-clip: content-box;
-  transition: all 0.2s ease;
-}
-.radio_option input:hover + label:before {
-  border-color: #000000;
-}
-.radio_option input:checked + label:before {
-  background-color: #000000;
-  border-color: #000000;
+.card{
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
-.select_option {
-  position: relative;
-  width: 100%;
-}
-.select_option select {
-  display: inline-block;
-  width: 100%;
-  height: 35px;
-  padding: 0px 15px;
-  cursor: pointer;
-  color: #7b7b7b;
-  border: 1px solid #cccccc;
-  border-radius: 0;
-  background: #fff;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  transition: all 0.2s ease;
-}
-.select_option select::-ms-expand {
-  display: none;
-}
-.select_option select:hover, .select_option select:focus {
-  color: #000000;
-  background: #fafafa;
-  border-color: #000000;
-  outline: none;
-}
-
-.select_arrow {
-  position: absolute;
-  top: calc(50% - 4px);
-  right: 15px;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  border-width: 8px 5px 0 5px;
-  border-style: solid;
-  border-color: #7b7b7b transparent transparent transparent;
-}
-
-.select_option select:hover + .select_arrow, .select_option select:focus + .select_arrow {
-  border-top-color: #000000;
-}
-
-.credit {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 15px;
-  color: #f5ba1a;
-}
-.credit a {
-  color: #e1a70a;
-}
-
-@-webkit-keyframes check {
-  0% {
-    height: 0;
-    width: 0;
-  }
-  25% {
-    height: 0;
-    width: 7px;
-  }
-  50% {
-    height: 20px;
-    width: 7px;
-  }
-}
-@keyframes check {
-  0% {
-    height: 0;
-    width: 0;
-  }
-  25% {
-    height: 0;
-    width: 7px;
-  }
-  50% {
-    height: 20px;
-    width: 7px;
-  }
-}
-@-webkit-keyframes expand {
-  0% {
-    -webkit-transform: scale3d(1, 0, 1);
-    opacity: 0;
-  }
-  25% {
-    -webkit-transform: scale3d(1, 1.2, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1, 0.85, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1, 1.05, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    opacity: 1;
-  }
-}
-@keyframes expand {
-  0% {
-    -webkit-transform: scale3d(1, 0, 1);
-    transform: scale3d(1, 0, 1);
-    opacity: 0;
-  }
-  25% {
-    -webkit-transform: scale3d(1, 1.2, 1);
-    transform: scale3d(1, 1.2, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1, 0.85, 1);
-    transform: scale3d(1, 0.85, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1, 1.05, 1);
-    transform: scale3d(1, 1.05, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translate3d(0, -25px, 0);
-    opacity: 0;
-  }
-  25% {
-    -webkit-transform: translate3d(0, 10px, 0);
-  }
-  50% {
-    -webkit-transform: translate3d(0, -6px, 0);
-  }
-  75% {
-    -webkit-transform: translate3d(0, 2px, 0);
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-@keyframes bounce {
-  0% {
-    -webkit-transform: translate3d(0, -25px, 0);
-    transform: translate3d(0, -25px, 0);
-    opacity: 0;
-  }
-  25% {
-    -webkit-transform: translate3d(0, 10px, 0);
-    transform: translate3d(0, 10px, 0);
-  }
-  50% {
-    -webkit-transform: translate3d(0, -6px, 0);
-    transform: translate3d(0, -6px, 0);
-  }
-  75% {
-    -webkit-transform: translate3d(0, 2px, 0);
-    transform: translate3d(0, 2px, 0);
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-@media (max-width: 600px) {
-  .form_wrapper .col_half {
-    width: 100%;
-    float: none;
-  }
-
-  .bottom_row .col_half {
-    width: 50%;
-    float: left;
-  }
-
-  .form_container .row .col_half.last {
-    border-left: none;
-  }
-
-  .remember_me {
-    padding-bottom: 20px;
-  }
-}
 </style>
 	<body>
 		
@@ -519,7 +155,7 @@ body {
 						<ul class="nav navbar-nav">
 
 							<li>
-								<a href="<?php echo base_url(); ?>dash_item_add"><span class="elusive icon-home"></span> Dashboard</a>
+								<a  href="<?php echo base_url();?>dash_item_add"><span class="elusive icon-home"></span> Dashboard</a>
 							</li>
 
 							<!-- Dropdown navigation items -->
@@ -645,6 +281,7 @@ body {
 										<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 										<h4 class="modal-title">Add Product</h4>
+									
 										</div>
 										<div class="modal-body">
 
@@ -652,56 +289,207 @@ body {
 
 <!-- form show -->
 
-<div class="form_wrapper">
-  <div class="form_container">
-    <div class="title_container">
-      <h2>Responsive Registration Form</h2>
-    </div>
-    <div class="row clearfix">
-      <div class="">
-        <form method="post">
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-            <input type="file" name="image" placeholder="select image"  />
-				
-          </div>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-            <input type="text" name="name" placeholder="Enter Product Name"  />
-          </div>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-            <input type="text" name="price" placeholder="Enter the Price"  />
-          </div>
-          <div class="row clearfix">
-					<div class="input_field select_option">
-                <select name="qnt" >
-                  <option>Select a quntity</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-                </select>
-                <div class="select_arrow"></div>
-              </div>
+																	<div class="form_container">
+																		<div class="title_container">
+																			<h2>Responsive Registration Form</h2>
+																		</div>
 
-           
-						<div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-							<textarea id="comment" name="comment" cols="40" rows="5" class="form-control" placeholder="Enter the Message..."></textarea>
-              </div>
-   
+																		<form id="contact-form" role="form" method="post" action="<?php echo base_url(); ?>dash_item_add/insert" enctype="multipart/form-data">
+
             
-          </div>
-            
-             
-           
-	<input type="submit" value="insert" class="button">
-        </form>
-      </div>
-    </div>
-  </div>
+
+<div class="controls">
+
+	<div class="row">
+		
+	<div class="col-md-12">
+		<div class="form-group">
+		<label for="form_name">Product Type</label></br>
+				
+							 <input type="radio" id="html" onclick="show1();" name="fav_language" value="HTML" checked>
+						  <label for="html">Standerd</label>
+						  <input type="radio" id="css" onclick="show2();"  name="fav_language" value="CSS">
+						  <label for="css">Media & Interactive</label>
+
+		</div>
+
+	</div>
+	
+
+
+	<script>
+							function show2(){
+								document.getElementById('f1').style.display ='block';
+								document.getElementById('file').style.display = 'none';
+								}
+								function show1(){
+									document.getElementById('f1').style.display ='none';
+									document.getElementById('file').style.display = 'block';
+									document.getElementById('file1').style.display ='none';
+
+									document.getElementById('file2').style.display ='none';
+									document.getElementById('file3').style.display ='none';
+									document.getElementById('file4').style.display ='none';	
+								}
+								function fun1()
+								{
+									document.getElementById('file1').style.display ='block';
+
+									document.getElementById('file2').style.display ='none';
+									document.getElementById('file3').style.display ='none';
+									document.getElementById('file4').style.display ='none';	
+								}
+								function fun2()
+								{
+									document.getElementById('file1').style.display ='none';
+
+									document.getElementById('file2').style.display ='block';	
+									document.getElementById('file3').style.display ='none';
+									document.getElementById('file4').style.display ='none';	
+								}
+								function fun3()
+								{
+									document.getElementById('file1').style.display ='none';
+									document.getElementById('file2').style.display ='none';
+									document.getElementById('file3').style.display ='block';
+									document.getElementById('file4').style.display ='none';	
+								}
+								function fun4()
+								{
+									document.getElementById('file1').style.display ='none';
+									document.getElementById('file2').style.display ='none';
+									document.getElementById('file3').style.display ='none';
+									document.getElementById('file4').style.display ='block';	
+								}
+							
+									
+	</script>
+
+
+		<div class="row" id="f1" style="display:none";>
+			<div class="col-md-12">
+						<div class="form-group">
+										<label for="form_name">Media & Interactive</label></br>
+											
+									<input type="radio" id="html" onclick="fun1();" name="fav_language" value="text">
+									  <label for="html">text</label>
+									  <input type="radio" id="css1" onclick="fun2();" name="fav_language" value="image">
+									  <label for="css">Image</label>
+									  <input type="radio" id="css2" onclick="fun3();" name="fav_language" value="document">
+									  <label for="css">Document</label>
+									  <input type="radio" id="css3" onclick="fun4();" name="fav_language" value="video">
+									  <label for="css">Video</label>				
+						</div>
+			</div>
+		</div>
+
+
+		<div class="col-md-6">
+
+
+<div class="form-group" id="file1" style="display:none";>
+		<label for="form_name">text</label>
+		<input id="form_lastname" type="file" name="image" class="form-control" placeholder="Please  text enter url *"  data-error="Lastname is required.">
+		
 </div>
 
-										</div>
+<div class="form-group" id="file2" style="display:none";>
+		<label for="form_name">image</label>
+		<input id="form_lastname" type="file" name="image" class="form-control" placeholder="Please enter image url *"  data-error="Lastname is required.">
+		
+</div>
+
+<div class="form-group" id="file3" style="display:none";>
+		<label for="form_name">document</label>
+		<input id="form_lastname" type="file" name="image" class="form-control" placeholder="Please enter document url *"  data-error="Lastname is required.">
+		
+</div>
+
+<div class="form-group" id="file4" style="display:none";>
+		<label for="form_name">video</label>
+		<input id="form_lastname" type="file" name="image" class="form-control" placeholder="Please enter video url *"  data-error="Lastname is required.">
+		
+</div>
+
+</div>
+
+		<div class="row">
+
+		
+			
+
+				<div class="col-md-6">
+
+
+						<div class="form-group" id="file" style="display:block";>
+								<label for="form_name">image</label>
+								<input id="form_name" type="file" name="image" class="form-control " placeholder="pleace select file*"  data-error="Firstname is required.">
+								
+						</div>
+				</div>
+	
+
+
+				<div class="col-md-6">
+						<div class="form-group">
+								<label for="form_lastname">product name</label>
+								<input id="form_lastname" type="text" name="name" class="form-control" placeholder="Please enter your name *"  data-error="Lastname is required.">
+																								</div>
+				</div>
+		</div>
+		<div class="row">
+				<div class="col-md-6">
+						<div class="form-group">
+								<label for="form_email">price *</label>
+								<input id="form_email" type="number" name="price" class="form-control" placeholder="Pleace enter the price"  data-error="Valid email is required.">
+								
+						</div>
+				</div>
+				<div class="col-md-6">
+						<div class="form-group">
+								<label for="form_need">Please Select quntity*</label>
+								<select id="form_need" name="qnt" class="form-control" required="required" data-error="Please specify your need.">
+										<option value="" selected disabled>--Select Your Issue--</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										
+								</select>
+								
+						</div>
+				</div>
+		</div>
+		<div class="row">
+				<div class="col-md-12">
+						<div class="form-group">
+								<label for="form_message">Message *</label>
+								<textarea id="form_message" name="comment" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea
+										>
+								</div>
+
+						</div>
+
+
+				<div class="col-md-12">
+						
+						<input type="submit" name="submit" class="btn btn-success btn-send  pt-2 btn-block
+								" value="insert" >
+				
+		</div>
+
+		</div>
+
+
+</div>
+</form>
+																	</div>
+
+
+								
 										<div class="modal-footer">
 										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 										</div>
@@ -725,29 +513,15 @@ body {
 							<section>
 								<!-- As a link -->
 						
-																			
-					<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				
-								
-								
-									<ul class="pagination">
-										<li class="page-item disabled">
-										<span class="page-item"><?php echo $links; ?></span>
-										</li>
-									</ul>
 
-								
-										<div class="collapse navbar-collapse" id="navbarSupportedContent" style="float:right;">										
-											<form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url(); ?>dash_item_add/search">
-													<input class="form-control mr-sm-2" name="search_text" type="search" placeholder="Search">
-													<input type="submit" class="btn btn-outline-success my-2 my-sm-0" name="submit"  value="search"  >
-											</form>
-										</div>
-									</nav>
-							
-									
+									<script>
+									$(document).ready(function () {
+  				  $("#table").DataTable();
+});
 
-								<table class="table table-striped table-condensed table-hover">
+</script>
+
+								<table class="table table-striped table-condensed table-hover" id="table">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -760,7 +534,7 @@ body {
 											<th>Action</th>
 										</tr>
 									</thead>
-									<tbody>
+									<tbody id="tbody">
 										<?php
 											foreach($item as $data)
 											{
